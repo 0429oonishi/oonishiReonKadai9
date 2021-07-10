@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		ABA343522699DB4F004E0531 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA343502699DB4F004E0531 /* Main.storyboard */; };
 		ABA343542699DB4F004E0531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA343532699DB4F004E0531 /* Assets.xcassets */; };
 		ABA343572699DB4F004E0531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA343552699DB4F004E0531 /* LaunchScreen.storyboard */; };
+		ABA3435F2699DE29004E0531 /* Prefectures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA3435E2699DE29004E0531 /* Prefectures.storyboard */; };
+		ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343602699DE36004E0531 /* PrefecturesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +29,8 @@
 		ABA343532699DB4F004E0531 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABA343562699DB4F004E0531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA343582699DB4F004E0531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABA3435E2699DE29004E0531 /* Prefectures.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefectures.storyboard; sourceTree = "<group>"; };
+		ABA343602699DE36004E0531 /* PrefecturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefecturesViewController.swift; sourceTree = "<group>"; };
 		F390DC6D5E4CB9C227004886 /* Pods-oonishiReonKadai9.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai9.release.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai9/Pods-oonishiReonKadai9.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -56,7 +60,6 @@
 				3E910A27F5E603E80B264A48 /* Pods-oonishiReonKadai9.debug.xcconfig */,
 				F390DC6D5E4CB9C227004886 /* Pods-oonishiReonKadai9.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -85,6 +88,8 @@
 				ABA3434C2699DB4F004E0531 /* SceneDelegate.swift */,
 				ABA3434E2699DB4F004E0531 /* ViewController.swift */,
 				ABA343502699DB4F004E0531 /* Main.storyboard */,
+				ABA343602699DE36004E0531 /* PrefecturesViewController.swift */,
+				ABA3435E2699DE29004E0531 /* Prefectures.storyboard */,
 				ABA343532699DB4F004E0531 /* Assets.xcassets */,
 				ABA343552699DB4F004E0531 /* LaunchScreen.storyboard */,
 				ABA343582699DB4F004E0531 /* Info.plist */,
@@ -152,6 +157,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA343572699DB4F004E0531 /* LaunchScreen.storyboard in Resources */,
+				ABA3435F2699DE29004E0531 /* Prefectures.storyboard in Resources */,
 				ABA343542699DB4F004E0531 /* Assets.xcassets in Resources */,
 				ABA343522699DB4F004E0531 /* Main.storyboard in Resources */,
 			);
@@ -207,6 +213,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA3434F2699DB4F004E0531 /* ViewController.swift in Sources */,
+				ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */,
 				ABA3434B2699DB4F004E0531 /* AppDelegate.swift in Sources */,
 				ABA3434D2699DB4F004E0531 /* SceneDelegate.swift in Sources */,
 			);
