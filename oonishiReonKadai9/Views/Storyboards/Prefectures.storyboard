@@ -20,41 +20,21 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="Sow-e6-qLh">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dRF-BY-Lkc"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dRF-BY-Lkc">
+                                            <connections>
+                                                <action selector="cancelButtonDidTapped:" destination="d9g-b6-YJP" id="ON6-pn-s2f"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="9oR-g2-eTW">
-                                <rect key="frame" x="50" y="138" width="314" height="150"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZI1-OC-QDb">
-                                        <rect key="frame" x="0.0" y="0.0" width="314" height="30"/>
-                                        <state key="normal" title="東京都"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXv-TE-LMv">
-                                        <rect key="frame" x="0.0" y="40" width="314" height="30"/>
-                                        <state key="normal" title="神奈川県"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cQC-by-elZ">
-                                        <rect key="frame" x="0.0" y="80" width="314" height="30"/>
-                                        <state key="normal" title="埼玉県"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9G-gj-vxs">
-                                        <rect key="frame" x="0.0" y="120" width="314" height="30"/>
-                                        <state key="normal" title="千葉県"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YfB-32-f64"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="i3d-1e-bbO" firstAttribute="leading" secondItem="waW-xy-gRb" secondAttribute="leading" id="OrO-ID-5de"/>
                             <constraint firstItem="YfB-32-f64" firstAttribute="trailing" secondItem="i3d-1e-bbO" secondAttribute="trailing" id="eWj-Ic-P8d"/>
-                            <constraint firstItem="YfB-32-f64" firstAttribute="trailing" secondItem="9oR-g2-eTW" secondAttribute="trailing" constant="50" id="kbm-XQ-dpl"/>
                             <constraint firstItem="i3d-1e-bbO" firstAttribute="top" secondItem="YfB-32-f64" secondAttribute="top" id="mrB-0m-Spu"/>
-                            <constraint firstItem="9oR-g2-eTW" firstAttribute="leading" secondItem="YfB-32-f64" secondAttribute="leading" constant="50" id="wiL-LH-wDc"/>
-                            <constraint firstItem="9oR-g2-eTW" firstAttribute="top" secondItem="i3d-1e-bbO" secondAttribute="bottom" constant="50" id="zz6-A2-dKk"/>
                         </constraints>
                     </view>
                 </viewController>
