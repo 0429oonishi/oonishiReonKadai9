@@ -8,6 +8,8 @@
 import UIKit
 
 final class PrefecturesViewController: UIViewController {
+    
+    private let prefectures = Prefecture.data
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,3 +26,4 @@ final class PrefecturesViewController: UIViewController {
     }
     
 }
+

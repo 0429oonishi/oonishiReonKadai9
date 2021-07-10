@@ -16,6 +16,7 @@
 		ABA343572699DB4F004E0531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA343552699DB4F004E0531 /* LaunchScreen.storyboard */; };
 		ABA3435F2699DE29004E0531 /* Prefectures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA3435E2699DE29004E0531 /* Prefectures.storyboard */; };
 		ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343602699DE36004E0531 /* PrefecturesViewController.swift */; };
+		ABA3436A2699E2D2004E0531 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343692699E2D2004E0531 /* Prefecture.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		ABA343582699DB4F004E0531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABA3435E2699DE29004E0531 /* Prefectures.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefectures.storyboard; sourceTree = "<group>"; };
 		ABA343602699DE36004E0531 /* PrefecturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefecturesViewController.swift; sourceTree = "<group>"; };
+		ABA343692699E2D2004E0531 /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		F390DC6D5E4CB9C227004886 /* Pods-oonishiReonKadai9.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai9.release.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai9/Pods-oonishiReonKadai9.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,6 +101,7 @@
 		ABA343622699DE9C004E0531 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				ABA343692699E2D2004E0531 /* Prefecture.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -254,6 +257,7 @@
 			files = (
 				ABA3434F2699DB4F004E0531 /* ViewController.swift in Sources */,
 				ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */,
+				ABA3436A2699E2D2004E0531 /* Prefecture.swift in Sources */,
 				ABA3434B2699DB4F004E0531 /* AppDelegate.swift in Sources */,
 				ABA3434D2699DB4F004E0531 /* SceneDelegate.swift in Sources */,
 			);

@@ -6,3 +6,14 @@
 //
 
 import Foundation
+
+struct Prefecture {
+    let name: String
+}
+
+extension Prefecture {
+    static let data = [Prefecture(name: "東京都"),
+                       Prefecture(name: "神奈川県"),
+                       Prefecture(name: "埼玉県"),
+                       Prefecture(name: "千葉県")]
+}
