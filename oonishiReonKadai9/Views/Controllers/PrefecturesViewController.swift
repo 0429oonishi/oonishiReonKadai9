@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PrefecturesViewControllerDelegate: AnyObject {
+    func prefecturesVC(text: String)
+}
+
 final class PrefecturesViewController: UIViewController {
     
     private let prefectures = Prefecture.data
@@ -20,7 +24,8 @@ final class PrefecturesViewController: UIViewController {
         return stackView
     }()
     private var prefectureButtons = [UIButton]()
-
+    var delegate: PrefecturesViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -68,7 +73,7 @@ final class PrefecturesViewController: UIViewController {
     
     @objc private func prefectureButtonDidTapped(sender: UIButton) {
         let name = prefectures[sender.tag].name
-        
+        delegate?.prefecturesVC(text: name)
         dismiss(animated: true, completion: nil)
     }
     
