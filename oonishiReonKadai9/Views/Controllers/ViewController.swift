@@ -19,9 +19,7 @@ final class ViewController: UIViewController {
     }
 
     @IBAction private func prefectureChoiceButtonDidTapped(_ sender: Any) {
-        let storyboard = UIStoryboard(name: "Prefectures", bundle: nil)
-        let prefecturesVC = storyboard.instantiateViewController(withIdentifier: "PrefecturesViewController") as! PrefecturesViewController
-        prefecturesVC.modalPresentationStyle = .fullScreen
+        let prefecturesVC = PrefecturesViewController.instantiate()
         present(prefecturesVC, animated: true, completion: nil)
     }
     

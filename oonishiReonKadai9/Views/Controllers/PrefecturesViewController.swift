@@ -7,23 +7,20 @@
 
 import UIKit
 
-class PrefecturesViewController: UIViewController {
+final class PrefecturesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    static func instantiate() -> PrefecturesViewController {
+        let storyboard = UIStoryboard(name: "Prefectures", bundle: nil)
+        let prefecturesVC = storyboard.instantiateViewController(
+            withIdentifier: "PrefecturesViewController"
+        ) as! PrefecturesViewController
+        prefecturesVC.modalPresentationStyle = .fullScreen
+        return prefecturesVC
     }
-    */
-
+    
 }
