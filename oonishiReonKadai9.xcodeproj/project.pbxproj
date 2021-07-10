@@ -15,8 +15,9 @@
 		ABA343542699DB4F004E0531 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABA343532699DB4F004E0531 /* Assets.xcassets */; };
 		ABA343572699DB4F004E0531 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA343552699DB4F004E0531 /* LaunchScreen.storyboard */; };
 		ABA3435F2699DE29004E0531 /* Prefectures.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABA3435E2699DE29004E0531 /* Prefectures.storyboard */; };
-		ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343602699DE36004E0531 /* PrefecturesViewController.swift */; };
 		ABA3436A2699E2D2004E0531 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343692699E2D2004E0531 /* Prefecture.swift */; };
+		ABA3436E2699EFE9004E0531 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3436D2699EFE9004E0531 /* ViewModel.swift */; };
+		ABA343702699F4E4004E0531 /* PrefecturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3436F2699F4E4004E0531 /* PrefecturesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,8 +32,9 @@
 		ABA343562699DB4F004E0531 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABA343582699DB4F004E0531 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABA3435E2699DE29004E0531 /* Prefectures.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Prefectures.storyboard; sourceTree = "<group>"; };
-		ABA343602699DE36004E0531 /* PrefecturesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefecturesViewController.swift; sourceTree = "<group>"; };
 		ABA343692699E2D2004E0531 /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
+		ABA3436D2699EFE9004E0531 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		ABA3436F2699F4E4004E0531 /* PrefecturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefecturesViewController.swift; sourceTree = "<group>"; };
 		F390DC6D5E4CB9C227004886 /* Pods-oonishiReonKadai9.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai9.release.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai9/Pods-oonishiReonKadai9.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,6 +111,7 @@
 		ABA343632699DEA6004E0531 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				ABA3436D2699EFE9004E0531 /* ViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -135,7 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA3434E2699DB4F004E0531 /* ViewController.swift */,
-				ABA343602699DE36004E0531 /* PrefecturesViewController.swift */,
+				ABA3436F2699F4E4004E0531 /* PrefecturesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -256,10 +259,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABA3434F2699DB4F004E0531 /* ViewController.swift in Sources */,
-				ABA343612699DE36004E0531 /* PrefecturesViewController.swift in Sources */,
 				ABA3436A2699E2D2004E0531 /* Prefecture.swift in Sources */,
 				ABA3434B2699DB4F004E0531 /* AppDelegate.swift in Sources */,
 				ABA3434D2699DB4F004E0531 /* SceneDelegate.swift in Sources */,
+				ABA343702699F4E4004E0531 /* PrefecturesViewController.swift in Sources */,
+				ABA3436E2699EFE9004E0531 /* ViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

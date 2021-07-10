@@ -29,7 +29,6 @@ final class PrefecturesViewController: UIViewController {
     }()
     private var prefectureButtons = [UIButton]()
     var delegate: PrefecturesViewControllerDelegate?
-    private let viewModel: PrefectureViewModelType = PrefectureViewModel()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
