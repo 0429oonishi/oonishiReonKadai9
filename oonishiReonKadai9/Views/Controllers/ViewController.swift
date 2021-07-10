@@ -7,13 +7,23 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
+    @IBOutlet private weak var prefectureNameLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        prefectureNameLabel.text = "未選択"
+        
     }
 
-
+    @IBAction private func prefectureChoiceButtonDidTapped(_ sender: Any) {
+        let storyboard = UIStoryboard(name: "Prefectures", bundle: nil)
+        let prefecturesVC = storyboard.instantiateViewController(withIdentifier: "PrefecturesViewController") as! PrefecturesViewController
+        prefecturesVC.modalPresentationStyle = .fullScreen
+        present(prefecturesVC, animated: true, completion: nil)
+    }
+    
 }
 

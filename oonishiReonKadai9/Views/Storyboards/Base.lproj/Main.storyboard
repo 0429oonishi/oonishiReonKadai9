@@ -34,6 +34,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-WF-ICN">
                                         <rect key="frame" x="216" y="0.0" width="98" height="30"/>
                                         <state key="normal" title="入力"/>
+                                        <connections>
+                                            <action selector="prefectureChoiceButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1X-D4-7Tj"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -46,6 +49,9 @@
                             <constraint firstItem="L1z-cf-5KN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="maV-l5-5Fp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="prefectureNameLabel" destination="L4a-i1-GBe" id="AcV-Mp-ZSZ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
