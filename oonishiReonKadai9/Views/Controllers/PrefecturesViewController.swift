@@ -15,6 +15,8 @@ protocol PrefecturesViewControllerDelegate: AnyObject {
 
 final class PrefecturesViewController: UIViewController {
     
+    @IBOutlet private weak var cancelButton: UIBarButtonItem!
+    
     private let prefectures = Prefecture.data
     private var prefectureStackView: UIStackView = {
         let stackView = UIStackView()
@@ -27,15 +29,26 @@ final class PrefecturesViewController: UIViewController {
     }()
     private var prefectureButtons = [UIButton]()
     var delegate: PrefecturesViewControllerDelegate?
+    private let viewModel: PrefectureViewModelType = PrefectureViewModel()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupBindings()
         self.view.addSubview(prefectureStackView)
         setupPrefectureButtons()
         setupStackView()
         setupStackViewLayout()
         
+    }
+    
+    private func setupBindings() {
+        cancelButton.rx.tap
+            .subscribe(onNext: {
+                self.dismiss(animated: true, completion: nil)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupPrefectureButtons() {
@@ -76,10 +89,6 @@ final class PrefecturesViewController: UIViewController {
     @objc private func prefectureButtonDidTapped(sender: UIButton) {
         let name = prefectures[sender.tag].name
         delegate?.prefecturesVC(text: name)
-        dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction func cancelButtonDidTapped(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
