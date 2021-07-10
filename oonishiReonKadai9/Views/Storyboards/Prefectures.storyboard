@@ -20,11 +20,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
                                     <navigationItem id="Sow-e6-qLh">
-                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dRF-BY-Lkc">
-                                            <connections>
-                                                <action selector="cancelButtonDidTapped:" destination="d9g-b6-YJP" id="ON6-pn-s2f"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="dRF-BY-Lkc"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -37,6 +33,9 @@
                             <constraint firstItem="i3d-1e-bbO" firstAttribute="top" secondItem="YfB-32-f64" secondAttribute="top" id="mrB-0m-Spu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="dRF-BY-Lkc" id="dg9-0d-4dQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rz7-9s-XpD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

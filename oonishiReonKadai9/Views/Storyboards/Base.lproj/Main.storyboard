@@ -25,7 +25,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="未選択" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-i1-GBe">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="名前" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L4a-i1-GBe">
                                         <rect key="frame" x="108" y="0.0" width="98" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -34,9 +34,6 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2HX-WF-ICN">
                                         <rect key="frame" x="216" y="0.0" width="98" height="30"/>
                                         <state key="normal" title="入力"/>
-                                        <connections>
-                                            <action selector="prefectureChoiceButtonDidTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h1X-D4-7Tj"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -50,6 +47,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="prefectureChoiceButton" destination="2HX-WF-ICN" id="53R-bY-Jnc"/>
                         <outlet property="prefectureNameLabel" destination="L4a-i1-GBe" id="AcV-Mp-ZSZ"/>
                     </connections>
                 </viewController>
