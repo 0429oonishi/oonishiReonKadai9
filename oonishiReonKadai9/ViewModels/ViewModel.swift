@@ -9,13 +9,13 @@ import RxSwift
 import RxCocoa
 
 protocol ViewModelInput {
-    func viewDidLoad()
-    func prefectureChoiceButtonDidTapped(handler: () -> Void)
+    func prefectureChoiceButtonDidTapped()
     func backed(text: String)
 }
 
 protocol ViewModelOutput: AnyObject {
     var prefectureName: Driver<String> { get }
+    var event: Observable<ViewModel.Event> { get }
 }
 
 protocol ViewModelType {
@@ -24,25 +24,28 @@ protocol ViewModelType {
 }
 
 final class ViewModel: ViewModelInput, ViewModelOutput {
-    
-    var prefectureName: Driver<String> {
-        prefectureNameRelay
-            .asDriver(onErrorDriveWith: .empty())
-    }
-    private let prefectureNameRelay = PublishRelay<String>()
 
-    func viewDidLoad() {
-        prefectureNameRelay.accept("未選択")
+    enum Event {
+        case presentPrefecturesScreen
+    }
+
+    private let eventRelay = PublishRelay<Event>()
+    var event: Observable<Event> {
+        eventRelay.asObservable()
+    }
+
+    private let prefectureNameRelay = BehaviorRelay<String>(value: "未選択")
+    var prefectureName: Driver<String> {
+        prefectureNameRelay.asDriver()
     }
     
-    func prefectureChoiceButtonDidTapped(handler: () -> Void) {
-        handler()
+    func prefectureChoiceButtonDidTapped() {
+        eventRelay.accept(.presentPrefecturesScreen)
     }
     
     func backed(text: String) {
         prefectureNameRelay.accept(text)
     }
-    
 }
 
 extension ViewModel: ViewModelType {
