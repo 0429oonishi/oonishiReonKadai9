@@ -14,10 +14,15 @@ protocol PrefecturesViewControllerDelegate: AnyObject {
 }
 
 final class PrefecturesViewController: UIViewController {
+
+    private let viewModel: PrefecturesViewModelType = PrefecturesViewModel()
     
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
     
-    private let prefectures = Prefecture.data
+    private var prefectures: [Prefecture] {
+        viewModel.outputs.prefectures
+    }
+
     private var prefectureStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -27,6 +32,7 @@ final class PrefecturesViewController: UIViewController {
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
+
     private var prefectureButtons = [UIButton]()
     var delegate: PrefecturesViewControllerDelegate?
     private let disposeBag = DisposeBag()
@@ -44,8 +50,17 @@ final class PrefecturesViewController: UIViewController {
     
     private func setupBindings() {
         cancelButton.rx.tap
-            .subscribe(onNext: {
-                self.dismiss(animated: true, completion: nil)
+            .subscribe(onNext: viewModel.inputs.didTapCancelButton)
+            .disposed(by: disposeBag)
+
+        viewModel.outputs.event
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .dismiss:
+                    self?.dismiss(animated: true, completion: nil)
+                case .returnSelectedName(let name):
+                    self?.delegate?.prefecturesVC(text: name)
+                }
             })
             .disposed(by: disposeBag)
     }
@@ -86,10 +101,6 @@ final class PrefecturesViewController: UIViewController {
     }
     
     @objc private func prefectureButtonDidTapped(sender: UIButton) {
-        let name = prefectures[sender.tag].name
-        delegate?.prefecturesVC(text: name)
-        dismiss(animated: true, completion: nil)
+        viewModel.inputs.didTapPrefectureButton(index: sender.tag)
     }
-    
 }
-

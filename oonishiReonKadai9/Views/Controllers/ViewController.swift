@@ -19,28 +19,29 @@ final class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupBindings()
-        viewModel.inputs.viewDidLoad()
-        
     }
     
     private func setupBindings() {
-        prefectureChoiceButton.rx.tap
-            .subscribe(onNext: {
-                self.viewModel.inputs.prefectureChoiceButtonDidTapped() {
+        viewModel.outputs.event
+            .subscribe(onNext: { [weak self] in
+                switch $0 {
+                case .presentPrefecturesScreen:
                     let prefecturesVC = PrefecturesViewController.instantiate()
                     prefecturesVC.delegate = self
-                    self.present(prefecturesVC, animated: true, completion: nil)
+                    self?.present(prefecturesVC, animated: true, completion: nil)
                 }
             })
+            .disposed(by: disposeBag)
+
+        prefectureChoiceButton.rx.tap
+            .subscribe(onNext: viewModel.inputs.prefectureChoiceButtonDidTapped)
             .disposed(by: disposeBag)
 
         viewModel.outputs.prefectureName
             .drive(prefectureNameLabel.rx.text)
             .disposed(by: disposeBag)
     }
-    
 }
 
 extension ViewController: PrefecturesViewControllerDelegate {
