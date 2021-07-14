@@ -21,21 +21,25 @@ final class ViewController: UIViewController {
         super.viewDidLoad()
         
         setupBindings()
-        viewModel.inputs.viewDidLoad()
         
     }
     
     private func setupBindings() {
         prefectureChoiceButton.rx.tap
-            .subscribe(onNext: {
-                self.viewModel.inputs.prefectureChoiceButtonDidTapped() {
-                    let prefecturesVC = PrefecturesViewController.instantiate()
-                    prefecturesVC.delegate = self
-                    self.present(prefecturesVC, animated: true, completion: nil)
+            .subscribe(onNext: viewModel.inputs.prefectureChoiceButtonDidTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.event
+            .drive(onNext: { [weak self] event in
+                switch event {
+                    case .presentPrefecturesScreen:
+                        let prefecturesVC = PrefecturesViewController.instantiate()
+                        prefecturesVC.delegate = self
+                        self?.present(prefecturesVC, animated: true, completion: nil)
                 }
             })
             .disposed(by: disposeBag)
-
+        
         viewModel.outputs.prefectureName
             .drive(prefectureNameLabel.rx.text)
             .disposed(by: disposeBag)
