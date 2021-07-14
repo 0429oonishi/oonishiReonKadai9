@@ -17,7 +17,10 @@ final class PrefecturesViewController: UIViewController {
     
     @IBOutlet private weak var cancelButton: UIBarButtonItem!
     
-    private let prefectures = Prefecture.data
+    private let viewModel: PrefecturesViewModelType = PrefecturesViewModel()
+    private var prefectures: [Prefecture] {
+        viewModel.outputs.prefectures
+    }
     private var prefectureStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.axis = .vertical
@@ -44,10 +47,20 @@ final class PrefecturesViewController: UIViewController {
     
     private func setupBindings() {
         cancelButton.rx.tap
-            .subscribe(onNext: {
-                self.dismiss(animated: true, completion: nil)
+            .subscribe(onNext: viewModel.inputs.cancelButtonDidTapped)
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.event
+            .drive(onNext: { [weak self] event in
+                switch event {
+                    case .dismiss:
+                        self?.dismiss(animated: true, completion: nil)
+                    case .returnSelectedName(let name):
+                        self?.delegate?.prefecturesVC(text: name)
+                }
             })
             .disposed(by: disposeBag)
+        
     }
     
     private func setupPrefectureButtons() {
@@ -86,9 +99,8 @@ final class PrefecturesViewController: UIViewController {
     }
     
     @objc private func prefectureButtonDidTapped(sender: UIButton) {
-        let name = prefectures[sender.tag].name
-        delegate?.prefecturesVC(text: name)
-        dismiss(animated: true, completion: nil)
+        // 全ての処理をViewModelに任せる
+        viewModel.inputs.prefectureButtonDidTapped(index: sender.tag)
     }
     
 }
