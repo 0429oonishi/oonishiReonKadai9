@@ -18,6 +18,7 @@
 		ABA3436A2699E2D2004E0531 /* Prefecture.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA343692699E2D2004E0531 /* Prefecture.swift */; };
 		ABA3436E2699EFE9004E0531 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3436D2699EFE9004E0531 /* ViewModel.swift */; };
 		ABA343702699F4E4004E0531 /* PrefecturesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA3436F2699F4E4004E0531 /* PrefecturesViewController.swift */; };
+		ABD819EF269EF53500E7D135 /* PrefecturesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD819EE269EF53500E7D135 /* PrefecturesViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		ABA343692699E2D2004E0531 /* Prefecture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefecture.swift; sourceTree = "<group>"; };
 		ABA3436D2699EFE9004E0531 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		ABA3436F2699F4E4004E0531 /* PrefecturesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrefecturesViewController.swift; sourceTree = "<group>"; };
+		ABD819EE269EF53500E7D135 /* PrefecturesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefecturesViewModel.swift; sourceTree = "<group>"; };
 		F390DC6D5E4CB9C227004886 /* Pods-oonishiReonKadai9.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-oonishiReonKadai9.release.xcconfig"; path = "Target Support Files/Pods-oonishiReonKadai9/Pods-oonishiReonKadai9.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA3436D2699EFE9004E0531 /* ViewModel.swift */,
+				ABD819EE269EF53500E7D135 /* PrefecturesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				ABA3434D2699DB4F004E0531 /* SceneDelegate.swift in Sources */,
 				ABA343702699F4E4004E0531 /* PrefecturesViewController.swift in Sources */,
 				ABA3436E2699EFE9004E0531 /* ViewModel.swift in Sources */,
+				ABD819EF269EF53500E7D135 /* PrefecturesViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
