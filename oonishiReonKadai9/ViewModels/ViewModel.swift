@@ -9,13 +9,13 @@ import RxSwift
 import RxCocoa
 
 protocol ViewModelInput {
-    func viewDidLoad()
-    func prefectureChoiceButtonDidTapped(handler: () -> Void)
+    func prefectureChoiceButtonDidTapped()
     func backed(text: String)
 }
 
 protocol ViewModelOutput: AnyObject {
     var prefectureName: Driver<String> { get }
+    var event: Driver<ViewModel.Event> { get }
 }
 
 protocol ViewModelType {
@@ -25,18 +25,25 @@ protocol ViewModelType {
 
 final class ViewModel: ViewModelInput, ViewModelOutput {
     
-    var prefectureName: Driver<String> {
-        prefectureNameRelay
-            .asDriver(onErrorDriveWith: .empty())
-    }
-    private let prefectureNameRelay = PublishRelay<String>()
-
-    func viewDidLoad() {
-        prefectureNameRelay.accept("未選択")
+    //  ViewControllerに伝えるイベントを定義
+    enum Event {
+        case presentPrefecturesScreen
     }
     
-    func prefectureChoiceButtonDidTapped(handler: () -> Void) {
-        handler()
+    private let eventRelay = PublishRelay<Event>()
+    var event: Driver<Event> {
+        eventRelay.asDriver(onErrorDriveWith: .empty())
+    }
+    
+    // ラベルにバインドする用途で現在地が必要なのでBehavior系を使う
+    private let prefectureNameRelay = BehaviorRelay<String>(value: "未選択")
+    
+    var prefectureName: Driver<String> {
+        prefectureNameRelay.asDriver()
+    }
+    
+    func prefectureChoiceButtonDidTapped() {
+        eventRelay.accept(.presentPrefecturesScreen)
     }
     
     func backed(text: String) {
